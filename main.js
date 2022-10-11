@@ -1,19 +1,31 @@
-// Tocando o som POM.........................................
-function tocaSomPom () {
-    document.querySelector('#som_tecla_pom').play();
+// Tocando o som VARIÁVEL.........................................
+function tocaSom (idElementoAudio) {
+    document.querySelector(idElementoAudio).play();
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla'); // abre um NodeList usando a class '.tecla' em comum...
 
-listaDeTeclas[0].onclick = tocaSomPom;
-listaDeTeclas[1].onclick = tocaSomClap;
-listaDeTeclas[2].onclick = tocaSomTim;
-listaDeTeclas[3].onclick = tocaSomPuff;
-listaDeTeclas[4].onclick = tocaSomSplash;
-listaDeTeclas[5].onclick = tocaSomToim;
-listaDeTeclas[6].onclick = tocaSomPsh;
-listaDeTeclas[7].onclick = tocaSomTic;
-listaDeTeclas[8].onclick = tocaSomTom;
+let contador = 0;
+
+//Enquanto, loop de repetição durante uma 
+while (contador < listaDeTeclas.length) {
+
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+    
+    const idAudio = `#som_${instrumento}`;
+    console.log(idAudio);
+
+    //'#som_{instrumento}
+
+    tecla.onclick = function (){
+        tocaSom(idAudio);
+    }; // o () da função já chama ela, então dá erro pois é obrigatório existir interação do usuário antes de RODAR uma função...
+    
+    contador += 1;
+    
+    console.log(contador);
+}
 
 //document.querySelector('.tecla_pom').onclick = tocaSomPom;
 
