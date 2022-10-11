@@ -3,8 +3,11 @@ function tocaSomPom () {
     document.querySelector('#som_tecla_pom').play();
 }
 
-document.querySelector('.tecla_pom').onclick = tocaSomPom;
+document.querySelectorAll('.tecla')
 
+//document.querySelector('.tecla_pom').onclick = tocaSomPom;
+
+/*
 // document.querySelector('#som_tecla_pom').play(); //essa linha vai dar erro no console do arquivo ao abrir, pois existe uma ordem de ação... No index.html, o <script> roda primeiro de carregar os sons do <body>, então quando dependemos de elementos dentro do body do html, devemos colocar o script ao final do texto, por exemplo, uma linha acima antes de fechar o </body>
 
 // Tocando o som CLAP..........................................
@@ -63,3 +66,4 @@ function tocaSomTom () {
 
 document.querySelector('.tecla_tom').onclick = tocaSomTom;
 
+*/
