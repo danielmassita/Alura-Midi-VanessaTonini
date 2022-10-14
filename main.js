@@ -14,7 +14,19 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++) {
     tecla.onclick = function () {
         tocaSom(idAudio);
     }; // o () da função já chama ela, então dá erro pois é obrigatório existir interação do usuário antes de RODAR uma função...
-    
+
+    tecla.onkeydown = function (evento) {
+
+        if (evento.code === 'Space' || evento.code === "Enter") {
+            tecla.classList.add('ativa');
+        }
+        
+    }
+
+    tecla.onkeyup = function (evento) {
+        tecla.classList.remove('ativa');
+    }
+
 }
 
 
