@@ -1,31 +1,23 @@
-// Tocando o som VARIÁVEL.........................................
 function tocaSom (idElementoAudio) {
     document.querySelector(idElementoAudio).play();
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla'); // abre um NodeList usando a class '.tecla' em comum...
 
-let contador = 0;
-
 //Enquanto, loop de repetição durante uma 
-while (contador < listaDeTeclas.length) {
+for (let contador = 0; contador < listaDeTeclas.length; contador++) {
 
     const tecla = listaDeTeclas[contador];
     const instrumento = tecla.classList[1];
+    const idAudio = `#som_${instrumento}`; //template string    
     
-    const idAudio = `#som_${instrumento}`;
-    console.log(idAudio);
-
-    //'#som_{instrumento}
-
-    tecla.onclick = function (){
+    tecla.onclick = function () {
         tocaSom(idAudio);
     }; // o () da função já chama ela, então dá erro pois é obrigatório existir interação do usuário antes de RODAR uma função...
     
-    contador += 1;
-    
-    console.log(contador);
 }
+
+
 
 //document.querySelector('.tecla_pom').onclick = tocaSomPom;
 
